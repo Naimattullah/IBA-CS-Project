@@ -1,0 +1,12 @@
+echo " Project submission for IBA CS Class 2022"
+echo "Welcome to Reconnaissance Stage"
+echo " First Stage - Domain Name/IP Address for which you are looking for"
+read n
+echo " IP resolution - Know IP address"
+nslookup $n
+echo " Second Stage - Whois tool for Domain name"
+whois $n
+echo " The Harvester Tool for email addresses"
+theHarvester -d $n -1 50 -b google harvester.txt
+echo " Sublister tool for subdomain info"
+sublist3r -d $n -o sublister.txt
